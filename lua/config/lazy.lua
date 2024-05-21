@@ -16,6 +16,7 @@ require("lazy").setup({
 		{ import = "code" },
 		{ import = "ui" },
 		{ import = "lang" },
+		{ import = "editor" },
 	},
 	defaults = { lazy = true, version = nil },
 	install = { missing = true },
