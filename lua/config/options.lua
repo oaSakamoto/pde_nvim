@@ -46,6 +46,9 @@ opt.cursorline = true -- Enable highlighting of the current line
 opt.inccommand = "nosplit"
 opt.formatoptions = "jcroqlnt" -- tcqj
 opt.list = true -- Show some invisible characters (tabs...
+opt.lcs = {
+	tab = " ",
+}
 opt.shiftround = true -- Round indent
 opt.shiftwidth = 2 -- Size of an indent
 opt.smartindent = true -- Insert indents automatically
