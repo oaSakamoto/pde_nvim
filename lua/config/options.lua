@@ -3,7 +3,7 @@ local set = vim.keymap.set
 
 g.mapleader = " "
 set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
-
+set("n", "<leader>pv", vim.cmd.Ex)
 local opt = vim.opt
 
 -- ui
@@ -18,7 +18,8 @@ opt.pumheight = 10
 opt.inccommand = "nosplit" -- preview incremental substitute
 opt.laststatus = 0 -- global statusline
 opt.mouse = "a" -- Enable mouse mode
-opt.scrolloff = 8 -- Lines of context
+opt.scrolloff = 999
+opt.wrap = false-- Lines of context
 opt.showmode = false -- Dont show mode since we have a statusline
 opt.sidescrolloff = 8 -- Columns of context
 opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
@@ -71,6 +72,8 @@ opt.updatetime = 200 -- Save swap file and trigger CursorHold
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
 opt.timeoutlen = 300
+opt.clipboard = "unnamedplus"
+
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
