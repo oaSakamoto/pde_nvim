@@ -10,14 +10,6 @@ return {
 			"neovim/nvim-lspconfig",
 			lazy = false,
 		},
-		{
-			"folke/neodev.nvim",
-			lazy = false,
-			opts = {},
-			config = function()
-				require("neodev").setup({})
-			end,
-		},
 	},
 	opts = {
 		ensure_installed = { "rust_analyzer" },
