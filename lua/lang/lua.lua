@@ -24,7 +24,6 @@ return {
           local lspconfig = require("lspconfig")
 
           local configs = require("lspconfig.configs")
-          vim.print(configs["lua_ls"])
           lspconfig.lua_ls.setup({
             capabilities = capabilities,
             settings = {
