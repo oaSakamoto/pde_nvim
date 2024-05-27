@@ -5,7 +5,16 @@ return {
 		lazy = false,
 		priority = 1000,
 		flavor = "latte",
-		config = function()
+    opts = {
+      integrations = {
+        telescope = {
+          enabled = true,
+          style = "nvchad",
+        },
+      },
+    },
+		config = function(_, opts)
+      require("catppuccin").setup(opts)
 			local colors = require("catppuccin.palettes").get_palette("mocha")
 			vim.cmd([[colorscheme catppuccin-mocha]])
 			-- Redefine a cor para variaveis
