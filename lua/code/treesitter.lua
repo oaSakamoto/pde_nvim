@@ -19,6 +19,8 @@ return {
 				"vim",
 				"vimdoc",
 				"yaml",
+				"json",
+				"jsonc",
 			},
 			auto_install = false,
 			ignore_install = {},
