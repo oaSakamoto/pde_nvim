@@ -12,6 +12,22 @@ return {
 		event = { "BufReadPost", "BufNewFile" },
 		---@type TSConfig
 		opts = {
+			custom_install = {
+				function()
+					local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+					parser_config.xkb = {
+						install_info = {
+							url = "~/personal/parses_tressitter/tree-sitter-xkb", -- local path or git repo
+							files = { "src/parser.c" }, -- note that some parsers also require src/scanner.c or src/scanner.cc
+							-- optional entries:
+							-- branch = "main", -- default branch in case of git repo if different from master
+							generate_requires_npm = false, -- if stand-alone parser without npm dependencies
+							requires_generate_from_grammar = false, -- if folder contains pre-generated src/parser.c
+						},
+						filetype = "xkb", -- if filetype does not match the parser name
+					}
+				end,
+			},
 			ensure_installed = {
 				"bash",
 				"dockerfile",
@@ -21,6 +37,8 @@ return {
 				"yaml",
 				"json",
 				"jsonc",
+				"scheme",
+				"xkb",
 			},
 			auto_install = false,
 			ignore_install = {},
@@ -119,8 +137,10 @@ return {
 			},
 			modules = {},
 		},
-		---@param opts TSConfig
+
 		config = function(_, opts)
+			local custom_install = opts.custom_install[1]
+			custom_install()
 			if type(opts.ensure_installed) == "table" then
 				---@type table<string, boolean>
 				local added = {}
