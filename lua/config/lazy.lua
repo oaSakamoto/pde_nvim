@@ -20,5 +20,5 @@ require("lazy").setup({
 	},
 	defaults = { lazy = true, version = nil },
 	install = { missing = true },
-	checker = { enabled = true },
+	checker = { enabled = true, notify = false },
 })
