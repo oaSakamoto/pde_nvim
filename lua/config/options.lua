@@ -3,7 +3,6 @@ local set = vim.keymap.set
 
 g.mapleader = " "
 set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
-set("n", "<leader>pv", vim.cmd.Ex)
 local opt = vim.opt
 
 -- ui
